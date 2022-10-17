@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hero_widget_test/screens/recipe_list_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(),
+      home: const RecipeListScreen(),
     );
   }
 }
