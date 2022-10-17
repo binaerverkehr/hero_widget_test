@@ -14,9 +14,7 @@ class RecipeDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: Card(
-          shadowColor: Colors.grey,
-          elevation: 5.0,
+        child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -29,7 +27,9 @@ class RecipeDetailScreen extends StatelessWidget {
               Text(recipe.description),
               const SizedBox(height: 20),
               const Text('Ingredients: ', textScaleFactor: 2.0),
-              Expanded(
+              SizedBox(
+                width: double.infinity,
+                height: 500,
                 child: ListView.builder(
                   itemCount: recipe.ingredients.length,
                   itemBuilder: (context, index) {
