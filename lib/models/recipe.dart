@@ -12,4 +12,6 @@ class Recipe {
     required this.ingredients,
     required this.image,
   });
+
+  String get ingredientsFormatted => ingredients.join(', ');
 }
