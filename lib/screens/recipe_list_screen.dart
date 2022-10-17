@@ -19,10 +19,13 @@ class RecipeListScreen extends StatelessWidget {
             final recipe = recipes[index];
 
             return ListTile(
-              leading: Image.network(
-                recipe.imageLink,
-                width: 100,
-                fit: BoxFit.fitWidth,
+              leading: Hero(
+                tag: 'recipeImageTag${recipe.id}',
+                child: Image.network(
+                  recipe.imageLink,
+                  width: 100,
+                  fit: BoxFit.fitWidth,
+                ),
               ),
               title: Text(recipe.title),
               subtitle: Text('Ingredients: ${recipe.ingredientsFormatted}'),

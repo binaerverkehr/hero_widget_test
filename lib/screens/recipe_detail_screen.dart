@@ -18,7 +18,10 @@ class RecipeDetailScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.network(recipe.imageLink),
+              Hero(
+                tag: 'recipeImageTag${recipe.id}',
+                child: Image.network(recipe.imageLink),
+              ),
               const SizedBox(height: 10),
               Text(
                 recipe.title,
