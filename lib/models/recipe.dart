@@ -6,10 +6,10 @@ class Recipe {
   final List<String> ingredients; // Zutaten
   final Image image;
 
-  Recipe(
-    this.title,
-    this.description,
-    this.ingredients,
-    this.image,
-  );
+  Recipe({
+    required this.title,
+    required this.description,
+    required this.ingredients,
+    required this.image,
+  });
 }
