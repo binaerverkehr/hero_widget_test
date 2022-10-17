@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hero_widget_test/data/recipe_data.dart';
+import 'package:hero_widget_test/screens/recipe_detail_screen.dart';
 
 class RecipeListScreen extends StatelessWidget {
   const RecipeListScreen({super.key});
@@ -18,9 +19,23 @@ class RecipeListScreen extends StatelessWidget {
             final recipe = recipes[index];
 
             return ListTile(
-              leading: recipe.image,
+              leading: Image.network(
+                recipe.imageLink,
+                width: 100,
+                fit: BoxFit.fitWidth,
+              ),
               title: Text(recipe.title),
               subtitle: Text('Ingredients: ${recipe.ingredientsFormatted}'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return RecipeDetailScreen(recipe: recipe);
+                    },
+                  ),
+                );
+              },
             );
           },
         ),
